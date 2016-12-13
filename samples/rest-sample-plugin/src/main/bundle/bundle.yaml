@@ -1,0 +1,105 @@
+#
+# Copyright © 2016 VMware, Inc. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the “License”); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at http://www.apache.org/licenses/LICENSE-2.0
+#
+# Some files may be comprised of various open source software components, each of which
+# has its own license that is located in the source code of the respective component.
+#
+
+---
+bundleId: "vrcs.rest-sample"
+version: "1.0"
+modelVersion: "1.5.0"
+apiVersion: "2.2.0"
+description: "This is a simple vRCS Bundle"
+documentation: "https://wiki.vmware.com/tile/vrcs.RESTsample/1.0"
+author: "VMware Inc."
+datatypes:
+  - "datatypes/endpointType.yaml"
+  - "datatypes/headerType.yaml"
+tiles:
+  -
+    tileId: "vrcs.rest-sample:RESTTask"
+    displayName: "REST Task"
+    inputProperties:
+        endpoint:
+            type: "vrcs.rest-sample:RESTEndpoint"
+        path:
+            type: "String"
+        headers:
+            type: "vrcs.rest-sample:RESTHeader[]"
+        method:
+            type: "String"
+        body:
+            type: "String"
+        expectedStatuses:
+            type: "String"
+        expectedResponse:
+            type: "String"
+        poll:
+            type: "Boolean"
+        interval:
+            type: "Integer"
+        timeout:
+            type: "Integer"
+    outputProperties:
+        responseStatus:
+            type: "Integer"
+        responseHeaders:
+            type: "JSON"
+        responseBody:
+            type: "String"
+    executor: "com.vmware.vrcs.plugin.rest.TaskTile"
+    executorType: "JAVA"
+    categories: ["ALL"]
+    tags:
+      - VRCS_TASK
+    views:
+      -
+        path: "/config.js"
+        viewName: "config"
+        viewType: "alpaca"
+      -
+        path: "/result.js"
+        viewName: "result"
+        viewType: "alpaca"
+  -
+    tileId: "vrcs.rest-sample:RESTPreview"
+    displayName: "REST Preview"
+    inputProperties:
+        endpoint:
+            type: "vrcs.rest-sample:RESTEndpoint"
+        path:
+            type: "String"
+        headers:
+            type: "vrcs.rest-sample:RESTHeader[]"
+        method:
+            type: "String"
+        body:
+            type: "String"
+    outputProperties:
+        responsePreview:
+            type: "String"
+    executor: "com.vmware.vrcs.plugin.rest.PreviewTile"
+    executorType: "JAVA"
+    tags:
+      - VRCS_VIEW_CALLABLE
+  -
+    tileId: "vrcs.rest-sample:RESTEndpoint"
+    displayName: "REST Endpoint"
+    inputProperties:
+        endpoint:
+            type: "vrcs.rest-sample:RESTEndpoint"
+    executor: "com.vmware.vrcs.plugin.rest.EndpointTile"
+    executorType: "JAVA"
+    tags:
+      - VRCS_ENDPOINT
+    views:
+      -
+        path: "/endpoint.js"
+        viewName: "endpoint"
+        viewType: "alpaca"
+

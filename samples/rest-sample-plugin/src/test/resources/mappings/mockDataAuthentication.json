@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/header/auth",
+    "headers": {
+      "Authorization": {
+        "equalTo": "Basic bXlVc2VybmFtZTpteVBhc3N3b3Jk"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": "<response>Header authentication test is successful!</response>",
+    "headers": {
+      "Content-Type": "text/xml"
+    }
+  }
+}

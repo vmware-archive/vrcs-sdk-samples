@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/Test"
+  },
+  "response": {
+    "status": 200,
+    "body": "<response>Test is successful!</response>",
+    "headers": {
+      "Content-Type": "text/xml"
+    }
+  }
+}
