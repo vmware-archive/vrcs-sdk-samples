@@ -24,7 +24,7 @@ The Java-based Plug-in SDK allows you to extend vRCS's capability and create you
 
 ## Documentation
 
-For more details on developing your own plugin using the SDK please refer to the vRCS Plug-in SDK [Development Guide](https://github.com/vmware-automation/vrcs-sdk-samples/wiki/Home).
+For more details on developing your own plugin using the SDK please refer to the vRCS Plug-in SDK [Development Guide](https://github.com/vmware/vrcs-sdk-samples/wiki/Home).
 
 ## Releases & Major Branches
 
