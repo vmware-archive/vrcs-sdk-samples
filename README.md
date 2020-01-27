@@ -1,3 +1,4 @@
+# VMware has ended active development of this project, this repository will no longer be updated.
 # vRealize Code Stream Plug-In SDK Samples
 
 ## Overview
